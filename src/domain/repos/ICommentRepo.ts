@@ -1,7 +1,6 @@
 import { Comment } from '../entities/Comment';
 
-export interface ICommentRepo {
+export interface ICommentRepository {
     create(comment: Comment): Promise<Comment>;
-    getById(id: string): Promise<Comment | null>;
-    getAllByVIdeo(videoId: string): Promise<Comment[]>;
+    readAllByVIdeo(videoId: string): Promise<Comment[] | null>;
 };

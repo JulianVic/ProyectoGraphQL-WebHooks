@@ -1,9 +1,8 @@
 import { Video } from '../entities/Video';
 
-export interface IVideoRepo {
+export interface IVideoRepository {
     create(video: Video): Promise<Video>;
-    getById(id: string): Promise<Video | null>;
-    getAllByUser(userId: string): Promise<Video[]>;
-    getAll(): Promise<Video[]>;
-    delete(id: string): Promise<void>;
+    readById(id: string): Promise<Video | null>;
+    readAllByUser(userId: string): Promise<Video[]>;
+    readAll(): Promise<Video[]>;
 };
